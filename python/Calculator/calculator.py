@@ -2,50 +2,58 @@ import sys
 import os
 import random
 
-def add (fNum, lNum):
-    addNum = fNum + lNum
+def add (fNum, sNum):
+    addNum = fNum + sNum
     return addNum
-def sub (fNum, lNum):
-    subNum = fNum - lNum
+def subt (fNum, sNum):
+    subNum = fNum - sNum
     return subNum
-def mult (fNum, lNum):
-    multNum = fNum * lNum
+def mult (fNum, sNum):
+    multNum = fNum * sNum
     return multNum
-def div (fNum, lNum):
-    divNum = fNum / lNum
+def div (fNum, sNum):
+    divNum = fNum / sNum
     return divNum
 
 numlist=[]
-x=input("")
+x=(input(""))
 while (x!=""):
-    if (x=="+"):
-        lNum = numlist.pop()
-        fNum = numlist.pop()
-        y=add(fNum, lNum)
-        numlist.append(int(y))
-        print(y)
-        x=input("")
-    elif (x=="-"):
-        lNum = numlist.pop()
-        fNum = numlist.pop()
-        y=sub(fNum, lNum)
-        numlist.append(int(y))
-        print(y)
-        x=input("")
-    elif (x=="*"):
-        lNum = numlist.pop()
-        fNum = numlist.pop()
-        y= mult(fNum, lNum)
-        numlist.append(int(y))
-        print(y)
-        x=input("")
-    elif (x=="/"):
-        lNum = numlist.pop()
-        fNum = numlist.pop()
-        y= div (fNum, lNum)
-        numlist.append(int(y))
-        print(y)
-        x=input("")
-    else:
+    if (x.isdigit()==True):
         numlist.append(int(x))
-        x=input("")
+        x=(input(""))
+    elif ((x=="+") or (x=="-") or (x=="*") or (x=="/")):
+        count=len(numlist)
+        if (count>=2):
+            if (x=="+"):
+                sNum = numlist.pop()
+                fNum = numlist.pop()
+                y=add(fNum, sNum)
+                numlist.append(y)
+                print(y)
+                x=(input(""))
+            elif (x=="-"):
+                sNum = numlist.pop()
+                fNum = numlist.pop()
+                y=subt(fNum, sNum)
+                numlist.append(y)
+                print(y)
+                x=(input(""))
+            elif (x=="*"):
+                sNum = numlist.pop()
+                fNum = numlist.pop()
+                y=mult (fNum, sNum)
+                numlist.append(y)
+                print(y)
+                x=(input(""))
+            elif (x=="/"):
+                sNum = numlist.pop()
+                fNum = numlist.pop()
+                y=div(fNum, sNum)
+                numlist.append(y)
+                print(y)
+        else:
+            print("Input more number!")
+            x=(input(""))
+    else:
+        print("Please input a number!")
+        x=(input(""))
