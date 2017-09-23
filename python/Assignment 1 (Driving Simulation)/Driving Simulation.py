@@ -16,15 +16,15 @@ def main ():
         print("Duration:", duration, end=" ")
         print("Distance (*=10m): ", "*" *int(distance_traveled(initial_velocity,acceleration, duration)/10))
     if (final_velocity(initial_velocity, acceleration, duration)>max_velocity):
-        print("Speed limit was "+ str(final_velocity(initial_velocity, acceleration, duration)) +" m/s")
-        print("Maximum speed limit "+str(max_velocity)+" m/s reached, please drive carefully!")
+        print("Maximum speed was "+ str(final_velocity(initial_velocity, acceleration, duration)) +" m/s")
+        print("Maximum speed limit "+ str(max_velocity)+" m/s reached, please drive carefully!")
     else:
-        print("Speed limit was "+ str(final_velocity(initial_velocity, acceleration, duration)) +" m/s")
-        print("Maximum speed limit "+str(max_velocity)+ ", thankyou for driving carefully.");
+        print("Maximum speed was "+ str(final_velocity(initial_velocity, acceleration, duration)) +" m/s")
+        print("Maximum speed limit "+ str(max_velocity)+ " m/s, thankyou for driving carefully.");
     if (distance_traveled(initial_velocity,acceleration, time)>= distance):
-        print("Distance travelled was "+ str(distance_traveled(initial_velocity,acceleration,time))+" m")
-        print("Distance reached!")
+        print("Maximum distance traveled was "+ str(distance_traveled(initial_velocity,acceleration,time))+" m")
+        print("Distance input was "+ str(distance)+" m, distance reached!")
     else:
-        print("Distance travelled was "+ str(distance_traveled(initial_velocity,acceleration,time))+" m")
-        print("Didn't reach distance...")
+        print("Maximum distance traveled was "+ str(distance_traveled(initial_velocity,acceleration,time))+" m")
+        print("Distance input was "+ str(distance)+" m, didn't reach distance...")
 main()
